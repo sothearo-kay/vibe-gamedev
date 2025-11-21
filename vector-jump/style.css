@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#game-container {
+  position: relative;
+  border: 2px solid #fff;
+}
+
+canvas {
+  display: block;
+  background-color: #000;
+}
+
+#ui-layer {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  text-align: right;
+  color: white;
+  pointer-events: none;
+}
+
+#score {
+  font-size: 30px;
+  font-weight: bold;
+}
+#high-score {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+#game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  display: none;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 0;
+}
+p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+.blink {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
