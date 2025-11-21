@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Lego Builder - Rotate & Move</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="instructions">
+      <h2>Controls</h2>
+      <p><strong>Left Click:</strong> Place / Interact</p>
+      <p><strong>Right Click:</strong> Rotate Camera</p>
+      <p><strong>Scroll:</strong> Zoom</p>
+      <p><kbd>R</kbd> : Rotate Brick</p>
+    </div>
+
+    <div id="ui-container">
+      <div class="row" id="color-palette"></div>
+
+      <hr
+        style="
+          width: 100%;
+          border: 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        "
+      />
+
+      <div class="row">
+        <button class="tool-btn active" id="btn-add" onclick="setMode('add')">
+          Build
+        </button>
+        <button class="tool-btn" id="btn-move" onclick="setMode('move')">
+          Move
+        </button>
+        <button class="tool-btn" id="btn-paint" onclick="setMode('paint')">
+          Paint
+        </button>
+        <button
+          class="tool-btn danger"
+          id="btn-delete"
+          onclick="setMode('delete')"
+        >
+          Delete
+        </button>
+      </div>
+
+      <div class="row">
+        <button class="tool-btn rotate-btn" onclick="rotateBrick()">
+          Rotate (R)
+        </button>
+        <button
+          class="tool-btn"
+          onclick="clearScene()"
+          style="font-size: 0.7rem; opacity: 0.7"
+        >
+          Clear All
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="game.js"></script>
+  </body>
+</html>
